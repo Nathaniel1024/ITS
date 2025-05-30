@@ -1,0 +1,444 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #F3F3E0;
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 200px;
+    background: linear-gradient(180deg, #4a6fa5 0%, #2c4875 100%);
+    color: white;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    overflow-y: auto;
+    border: none;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    padding: 0 20px 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    margin-right: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #4a6fa5;
+    font-size: 12px;
+}
+
+.logo-text {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.nav-menu {
+    list-style: none;
+}
+
+.nav-item {
+    margin-bottom: 5px;
+}
+
+.nav-link {
+    display: block;
+    padding: 12px 20px;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: all 0.3s;
+    border-left: 3px solid transparent;
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+    border-left-color: #ffa500;
+}
+
+.nav-link.active {
+    background-color: #ffa500;
+}
+
+.main-content {
+    margin-left: 200px;
+    flex: 1;
+    padding: 20px 30px;
+}
+
+.dropdown-content {
+    display: none;
+    position: static;         
+    background: none; 
+    min-width: 0;
+    box-shadow: none;
+    padding-left: 20px;  
+}
+
+.nav-item.dropdown.open .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: rgba(255,255,255,0.8);
+    background: none;
+    padding: 10px 0 10px 20px;
+}
+
+.dropdown-content a:hover {
+    background: rgba(255,255,255,0.08);
+    color: white;
+}
+
+.treasury-department {
+    color: #f3f3e0;
+    text-align: left;
+    font-family: "GildaDisplay";
+    font-size: 16px;
+    font-weight: var(--var-sds-typography-weight-extra-bold, 400);
+    position: absolute;
+    left: 70px;
+    top: 130px;
+    width: 89px;
+    height: 33px;
+}
+
+.Title {
+    color: #183b4e;
+    text-align: left;
+    font-family: "Besley-Bold";
+    font-size: 30px;
+    font-weight: 700;
+    position: absolute;
+    left: 220px;
+    top: 50px;
+    width: 278px;
+    height: 34px;
+}
+
+.pay {
+    background-color: #183b4e;
+    color: #f3f3e0;
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: 14px;
+    position: absolute;
+    left: 520px;
+    top: 70px;
+    width: 120px;
+    height: 34px;
+    border-radius: 10px;
+}
+
+.pay:hover {
+    color: #183b4e;
+    background-color: #f3f3e0;
+}
+
+.vouch {
+    background-color: #183b4e;
+    color: #f3f3e0;
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: 14px;
+    position: absolute;
+    left: 650px;
+    top: 70px;
+    width: 120px;
+    height: 34px;
+    border-radius: 10px;
+}
+
+.vouch:hover {
+    color: #183b4e;
+    background-color: #f3f3e0;
+}
+
+.bg1 {
+    background-color: #ffffff73;
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 1000px;
+    margin: 40px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 250px;
+    margin-top: 140px;
+    padding-bottom: 5px;
+    padding-top: 70px;
+}
+
+.card-row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 50px;
+    width: 100%;
+    justify-content: center;
+    background: none;
+    margin-left: -25px;   
+    margin-bottom: 10px;    
+    padding: 0;
+    height: auto;
+}
+
+.card-wrapper {
+    position: relative;
+    width: 180px;
+    height: 150px;
+}
+
+.card-wrapper .shadow,
+.card-wrapper .shadow1,
+.card-wrapper .shadow2,
+.card-wrapper .shadow3,
+.card-wrapper .ttlCollections,
+.card-wrapper .ttlDisbursement,
+.card-wrapper .Bal,
+.card-wrapper .ActTaxPayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 73%;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.card-wrapper p {
+    font-family: 'montserrat';
+    color: #f3f3e0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.shadow,
+.shadow1,
+.shadow2,
+.shadow3 {
+    width: 100%;
+    height: 73%;
+    margin-top: -30px;
+    background-color: #0D3D66;
+    z-index: 2;
+    box-shadow: 4px 4px 8px #ccc;
+}
+
+.ttlCollections p,
+.ttlDisbursement p,
+.Bal p,
+.ActTaxPayer p {
+    font-family: 'montserrat';
+    font-size: 10px;
+    color: #27548a;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 65px;
+}
+
+.ttlCollections,
+.ttlDisbursement,
+.Bal,
+.ActTaxPayer {
+    background-color: #E8AC41;
+    z-index: 1;
+    margin-top: 2px;
+    margin-left: 0px;
+    margin-bottom: 100px;
+    padding-bottom: 100px;
+    border-radius: 30px;
+}
+
+.cat {
+    background-color: #ffffff73;
+    border-radius: 30px;
+    width: 327px;
+    height: 200px;
+    position: absolute;
+    left: 253px;
+    top: 400px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.cat p {
+    font-family: 'Belsey';
+    font-size: 22px;
+    font-weight: bold;
+    color: #183b4e;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: -15px;
+}
+
+#myPieChart {
+    margin-left: 25px;
+    margin-top: 15px;
+    width: 270px !important;
+    height: 170px !important;
+}
+
+.alert {
+    background-color: #ffffff73;
+    border-radius: 30px;
+    width: 627px;
+    height: 200px;
+    position: absolute;
+    left: 620px;
+    top: 400px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.ttl {
+    font-family: 'Belsey';
+    font-weight: bold;
+    font-size: 22px;
+    color: #183b4e;
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.alert1 {
+    display: flex;
+    flex-direction: row;
+    margin-left: 0;
+}
+
+.alert1 p {
+    font-family: 'montserrat';
+    color: #183b4e;
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 400px;
+}
+
+.alert1 a {
+    text-align: center;
+    margin-top: 2px;
+    margin-left: 106px;
+    border: solid #183b4e;
+    border-width: 1px;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.alert1 a:hover {
+    border: solid #183b4e;
+    background-color: #183b4e;
+    color: #f3f3e0;
+    display: inline-block;
+}
+
+.alert1:hover {
+    background-color: #DDA853;
+}
+
+.alert2 {
+    display: flex;
+    flex-direction: row;
+    margin-left: 0;
+    width: 627px;
+}
+
+.alert2 p {
+    font-family: 'montserrat';
+    color: #183b4e;
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 400px;
+}
+
+.alert2 a {
+    text-align: center;
+    margin-top: 2px;
+    margin-left: 107px;
+    border: solid #183b4e;
+    border-width: 1px;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.alert2 a:hover {
+    border: solid #183b4e;
+    background-color: #183b4e;
+    color: #f3f3e0;
+    display: inline-block;
+}
+
+.alert2:hover {
+    background-color: #DDA853;
+}
+
+.alert3 {
+    display: flex;
+    flex-direction: row;
+    margin-left: 0;
+    width: 627px;
+}
+
+.alert3 p {
+    font-family: 'montserrat';
+    color: #183b4e;
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 400px;
+}
+
+.alert3 a {
+    text-align: center;
+    margin-top: 2px;
+    margin-left: 107px;
+    border: solid #183b4e;
+    border-width: 1px;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.alert3 a:hover {
+    border: solid #183b4e;
+    background-color: #183b4e;
+    color: #f3f3e0;
+    display: inline-block;
+}
+
+.alert3:hover {
+    background-color: #DDA853;
+}
