@@ -26,23 +26,23 @@
             </div>
           </div>
 
-          <form action="" method="post">
+          <form action="index.php" method="post">
             <div class="form-side">
               <!-- form side -->
               <div class="login-box">
                 <label for="Email"><label class="red-text">*</label>Email</label>
-                <input type="email" name="Email" id="Email" placeholder="Enter your email" required>
+                <input type="email" name="email" id="Email" placeholder="Enter your email" required>
         
                 <label for="Password"><label class="red-text">*</label>Password</label>
-                <input type="password" name="Password" id="Password" placeholder="Enter your password" required>
+                <input type="password" name="password" id="Password" placeholder="Enter your password" required>
         
                 <div class="actions">
                   <label><input type="checkbox" id="Remember"> Remember me</label>
-                  <a href="#">Forgot password?</a>
+                  <a href="forgot-password.php">Forgot password?</a>
                 </div>
         
-                <!-- <button type="submit">SIGN IN</button> -->
-                <button><a href="dashboard.html">SIGN IN</a></button> <!-- !!!!CHANGE THIS!!!! -->
+                <button type="submit" name="login">SIGN IN</button>
+                <!-- <button><a href="dashboard.html">SIGN IN</a></button> -->
               </div>
             </div>
           </form>
