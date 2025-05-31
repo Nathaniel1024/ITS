@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Payment Form</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Besley:wght@400..900&family=Gilda+Display&family=Montserrat:wght@100..900&family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/payment_form.css">
+  <link rel="shortcut icon" href="img/logo.jpg" type="image/x-icon">
+</head>
+<body>
+  <div class="content">
+    <div class="dashboard">
+      <nav class="sidebar">
+        <div class="logo-section">
+          <div class="logo"><img class="logo" src="img/logo.jpg" alt=""></div>
+          <div class="logo-text">
+            Treasury<br>Department
+          </div>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link" onclick="showPage('dashboard')">Dashboard</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle active" onclick="toggleDropdown(event, this)">Revenue Collection</a>
+            <div class="dropdown-content">
+              <a href="tax.html" class="nav-link">Tax Payer</a>
+              <a href="payment_form.html" class="nav-link active">Payment Form</a>
+              <a href="daily_collection.html" class="nav-link">Daily Collection</a>
+              <a href="#" class="nav-link">Reconciliations</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" onclick="toggleDropdown(event, this)">Disbursement</a>
+            <div class="dropdown-content">
+              <a href="#" class="nav-link" onclick="showPage('obligations')">Obligation Request</a>
+              <a href="#" class="nav-link" onclick="showPage('voucher')">Disbursement Voucher</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link" onclick="showPage('reports')">Report</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="main-content">
+        <h1 class="Title">Payment Form</h1>
+        <div class="main">
+          <div class="search">
+            <p class="bold">Payment Form Search</p><br>
+            <p class="light">Search by date or collection type</p>
+            <div class="form-group">
+              <select id="fieldSelect" onchange="updatePlaceholder()">
+                <option value="">-- Select --</option>
+                <option value="Date">Date</option>
+                <option value="Collection Type">Collection Type</option>
+              </select>
+              <input type="text" id="searchInput" placeholder="Select a field..." />
+              <button class="ser">Search</button>
+            </div>
+          </div>
+          <div class="tb">
+            <table class="payer" id="payerTable">
+              <thead>
+                <tr>
+                  <th colspan="3" class="b0">Recent Payments (This Month)</th>
+                </tr>
+                <tr>
+                  <th>Payer</th>
+                  <th>Amount</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-taxpayer="Juan Dela Cruz" data-amount="₱5,000" data-type="Business Tax">
+                  <td>Juan Dela Cruz</td>
+                  <td>₱5,000</td>
+                  <td>Business Tax</td>
+                </tr>
+                <tr data-taxpayer="Maria Santos" data-amount="₱3,200" data-type="Property Tax">
+                  <td>Maria Santos</td>
+                  <td>₱3,200</td>
+                  <td>Property Tax</td>
+                </tr>
+                <tr data-taxpayer="Pedro Reyes" data-amount="₱2,500" data-type="Income Tax">
+                  <td>Pedro Reyes</td>
+                  <td>₱2,500</td>
+                  <td>Income Tax</td>
+                </tr>
+              </tbody>
+            </table>
+            <div id="infoModal" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="document.getElementById('infoModal').style.display='none'">&times;</span>
+                <h2 id="modalName"></h2>
+                <p><strong>Amount:</strong> <span id="modalAmount"></span></p>
+                <p><strong>Type:</strong> <span id="modalType"></span></p>
+                <table id="breakdownTable" class="breakdown-table">
+                  <thead>
+                    <tr>
+                      <th>Description</th>
+                      <th>Amount</th>
+                      <th>Category</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+            <table class="vendor" id="vendorTable">
+              <thead>
+                <tr>
+                  <th colspan="3" class="b0">Vendors (This Month)</th>
+                </tr>
+                <tr>
+                  <th>Vendor</th>
+                  <th>Amount</th>
+                  <th>Category</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-vendor="Office Supplies Co" data-amount="₱1,200" data-category="Supplies">
+                  <td>Office Supplies Co</td>
+                  <td>₱1,200</td>
+                  <td>Supplies</td>
+                </tr>
+                <tr data-vendor="IT Solutions" data-amount="₱2,000" data-category="Technology">
+                  <td>IT Solutions</td>
+                  <td>₱2,000</td>
+                  <td>Technology</td>
+                </tr>
+              </tbody>
+            </table>
+            <div id="editModal" class="modal">
+              <div class="modal-content">
+                <span class="close" onclick="closeEditModal()">&times;</span>
+                <h3>Edit Breakdown</h3>
+                <form id="editForm">
+                  <label>Description:</label>
+                  <input type="text" id="editDesc" required>
+                  <label>Amount:</label>
+                  <input type="number" id="editAmt" required>
+                  <label>Category:</label>
+                  <input type="text" id="editCat" required>
+                  <div class="btn-group">
+                    <button type="submit" class="btn edit-btn">Save</button>
+                    <button type="button" class="btn delete-btn" onclick="closeEditModal()">Cancel</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/payment_form.js"></script>
+</body>
+</html>

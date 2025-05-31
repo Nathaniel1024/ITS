@@ -5,7 +5,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Besley:wght@400..900&family=Gilda+Display&family=Montserrat:wght@100..900&family=Roboto:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/tax.css">
+  <link rel="stylesheet" href="css/daily_collection.css">
   <link rel="shortcut icon" href="img/logo.jpg" type="image/x-icon">
 </head>
 <body>
@@ -26,8 +26,8 @@
             <a href="#" class="nav-link dropdown-toggle active" onclick="toggleDropdown(event, this)">Revenue Collection</a>
             <div class="dropdown-content">
               <a href="tax.html" class="nav-link">Tax Payer</a>
-              <a href="#" class="nav-link">Payment Form</a>
-              <a href="#" class="nav-link active">Daily Collection</a>
+              <a href="payment_form.html" class="nav-link">Payment Form</a>
+              <a href="daily_collection.html" class="nav-link">Daily Collection</a>
               <a href="#" class="nav-link">Reconciliations</a>
             </div>
           </li>
@@ -43,8 +43,20 @@
           </li>
         </ul>
       </nav>
-      <div class="main-content">
-       
+      <div class="main-content"> 
+        <h1 class="Title">Daily Collection</h1>
+        <div class="main">
+          <div class="search">
+            <p class="bold">Daily Collection Search</p><br>
+            <p class="light">Search by date or collection type</p>
+            <div class="form-group
+">
+              <select id="fieldSelect" onchange="updatePlaceholder()">
+                <option value="">-- Select --</option>
+                <option value="Date">Date</option>
+                <option value="Collection Type">Collection Type</option>
+              </select>
+              <input type="text" id="searchInput" placeholder="Select a field..." />       
       </div>
     </div>
   </div>
