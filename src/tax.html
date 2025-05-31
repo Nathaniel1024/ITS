@@ -20,7 +20,7 @@
         </div>
         <ul class="nav-menu">
           <li class="nav-item">
-            <a href="dashboard.html" class="nav-link" onclick="showPage('dashboard')">Dashboard</a>
+            <a href="dashboard.php" class="nav-link" onclick="showPage('dashboard')">Dashboard</a>
           </li>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle active" onclick="toggleDropdown(event, this)">Revenue Collection</a>
@@ -42,133 +42,21 @@
             <a href="#" class="nav-link" onclick="showPage('reports')">Report</a>
           </li>
         </ul>
+
+        <!-- Add logout button at the bottom of the sidebar -->
+    <div style="position: absolute; bottom: 5%; width: 100%; text-align: center;">
+        <form action="logout.php" method="post" style="margin: 0;">
+            <button type="submit" style="padding: 10px 30px; background: #c0392b; color: #fff; border: none; border-radius: 5px; cursor: pointer;">
+                Logout
+            </button>
+        </form>
+    </div>
+
       </nav>
       <div class="main-content">
+
         <h1 class="Title">Tax Payer</h1>
-        <div class="main">
-          <div class="search">
-            <p class="bold">Taxpayer Search</p><br>
-            <p class="light">Search by name, ID, or business registration number</p>
-            <div class="form-group">
-              <select id="fieldSelect" onchange="updatePlaceholder()">
-                <option value="">-- Select --</option>
-                <option value="Name">Name</option>
-                <option value="ID">ID</option>
-                <option value="Address">Address</option>
-                <option value="Business Registration Number">Business Registration Number</option>
-              </select>
-              <input type="text" id="searchInput" placeholder="Select a field..." />
-              <button class="ser">Search</button>
-            </div>
-          </div>
-          <div class="tb">
-            <table class="payer" id="payerTable">
-              <thead>
-                <tr>
-                  <th colspan="3" class="b0">Top Payers (This Month)</th>
-                </tr>
-                <tr>
-                  <th>Taxpayer</th>
-                  <th>Amount</th>
-                  <th>Type</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr data-taxpayer="ABC Corporation" data-amount="₱45,230" data-type="Business Tax">
-                  <td>ABC Corporation</td>
-                  <td>₱45,230</td>
-                  <td>Business Tax</td>
-                </tr>
-                <tr data-taxpayer="XYZ Industries" data-amount="₱38,920" data-type="Property Tax">
-                  <td>XYZ Industries</td>
-                  <td>₱38,920</td>
-                  <td>Property Tax</td>
-                </tr>
-                <tr data-taxpayer="Smith Holdings" data-amount="₱32,150" data-type="Income Tax">
-                  <td>Smith Holdings</td>
-                  <td>₱32,150</td>
-                  <td>Income Tax</td>
-                </tr>
-              </tbody>
-            </table>
-            <div id="infoModal" class="modal">
-              <div class="modal-content">
-                <span class="close" onclick="document.getElementById('infoModal').style.display='none'">&times;</span>
-                <h2 id="modalName"></h2>
-                <p><strong>Amount:</strong> <span id="modalAmount"></span></p>
-                <p><strong>Type:</strong> <span id="modalType"></span></p>
-                <table id="breakdownTable" class="breakdown-table">
-                  <thead>
-                    <tr>
-                      <th>Description</th>
-                      <th>Amount</th>
-                      <th>Category</th>
-                      <th>Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody></tbody>
-                </table>
-              </div>
-            </div>
-            <table class="vendor" id="vendorTable">
-              <thead>
-                <tr>
-                  <th colspan="3" class="b0">Top Vendors (This Month)</th>
-                </tr>
-                <tr>
-                  <th>Vendor</th>
-                  <th>Amount</th>
-                  <th>Category</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr data-vendor="City Infrastructure" data-amount="₱125,000" data-category="Construction">
-                  <td>City Infrastructure</td>
-                  <td>₱125,000</td>
-                  <td>Construction</td>
-                </tr>
-                <tr data-vendor="Municipal Services" data-amount="₱89,500" data-category="Maintenance">
-                  <td>Municipal Services</td>
-                  <td>₱89,500</td>
-                  <td>Maintenance</td>
-                </tr>
-                <tr data-vendor="Office Supplies Co" data-amount="₱45,200" data-category="Supplies">
-                  <td>Office Supplies Co</td>
-                  <td>₱45,200</td>
-                  <td>Supplies</td>
-                </tr>
-                <tr data-vendor="IT Solutions" data-amount="₱38,900" data-category="Technology">
-                  <td>IT Solutions</td>
-                  <td>₱38,900</td>
-                  <td>Technology</td>
-                </tr>
-                <tr data-vendor="Legal Services" data-amount="₱32,100" data-category="Professional">
-                  <td>Legal Services</td>
-                  <td>₱32,100</td>
-                  <td>Professional</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div id="editModal" class="modal">
-            <div class="modal-content">
-              <span class="close" onclick="closeEditModal()">&times;</span>
-              <h3>Edit Breakdown</h3>
-              <form id="editForm">
-                <label>Description:</label>
-                <input type="text" id="editDesc" required>
-                <label>Amount:</label>
-                <input type="number" id="editAmt" required>
-                <label>Category:</label>
-                <input type="text" id="editCat" required>
-                <div class="btn-group">
-                  <button type="submit" class="btn edit-btn">Save</button>
-                  <button type="button" class="btn delete-btn" onclick="closeEditModal()">Cancel</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
   </div>
