@@ -95,7 +95,7 @@ if (isset($_POST['email'])) {
         <input type="email" name="email" required> <br>
         <button type="submit" name="forgot-password">Reset Password</button>
         <br>
-        <p>Remembered your password? <a href="#">Login</a></p>
+        <p>Remembered your password? <a href="login.php">Login</a></p>
         <p style="color: red; text-align:center;"><?php echo $message; ?></p> <!-- Display the login message here -->
     </form>
 </body>
