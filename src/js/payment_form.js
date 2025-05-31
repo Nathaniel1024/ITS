@@ -139,9 +139,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  // Manually trigger click on the active taxpayer link to show dropdown
-  const taxpayerLink = document.querySelector(".dropdown-toggle.active");
-  taxpayerLink && taxpayerLink.click();
+  // Manually trigger click on the active payment_form link to show dropdown
+  const paymentFormLink = document.querySelector(".dropdown-toggle.active");
+  if (paymentFormLink) paymentFormLink.click();
 });
 
 // Add active class to clicked nav-link and remove from others

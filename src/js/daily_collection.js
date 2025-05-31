@@ -139,9 +139,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  // Manually trigger click on the active taxpayer link to show dropdown
-  const taxpayerLink = document.querySelector(".dropdown-toggle.active");
-  taxpayerLink.click();
+  // Manually trigger click on the active daily_collection link to show dropdown
+  const dailyCollectionLink = document.querySelector(".dropdown-toggle.active");
+  if (dailyCollectionLink) dailyCollectionLink.click();
 });
 
 // Add active class to clicked nav-link and remove from others
