@@ -204,7 +204,7 @@ function searchManualTrackers() {
   const filtered = manualTrackers.filter(tracker => {
     const matchesSearch = !searchValue ||
       tracker.fundName.toLowerCase().includes(searchValue) ||
-      tracker.id.toLowerCase().includes(searchValue);
+      tracker.trackingId.toLowerCase().includes(searchValue);
     const matchesStatus = !statusValue || tracker.status === statusValue;
     return matchesSearch && matchesStatus;
   });
@@ -219,7 +219,7 @@ function searchManualTrackers() {
   filtered.forEach((tracker, idx) => {
     const tr = document.createElement('tr');
     tr.innerHTML = `
-      <td>${tracker.id}</td>
+      <td>${tracker.trackingId}</td>
       <td>${tracker.fundName}</td>
       <td>${tracker.department}</td>
       <td>₱${Number(tracker.amount).toLocaleString()}</td>
@@ -254,7 +254,7 @@ function viewTracker(idx) {
   currentTrackerIndex = idx;
   activityPending = false;
   const tracker = manualTrackers[idx];
-  document.getElementById('modalTrackingId').value = tracker.id;
+  document.getElementById('modalTrackingId').value = tracker.trackingId;
   document.getElementById('modalFundName').value = tracker.fundName;
   document.getElementById('modalDepartment').value = tracker.department;
   document.getElementById('modalAmount').value = tracker.amount;
@@ -305,7 +305,7 @@ function saveTrackerDetails() {
   const by = document.getElementById('activityBy').value.trim();
 
   let tracker = {
-    id: document.getElementById('modalTrackingId').value,
+    trackingId: document.getElementById('modalTrackingId').value,
     fundName: document.getElementById('modalFundName').value,
     department: document.getElementById('modalDepartment').value,
     amount: document.getElementById('modalAmount').value,
