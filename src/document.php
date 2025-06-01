@@ -28,13 +28,8 @@
     <div class="menu">
 
       <div class="item"><a href="dashboard.php"><i class="fas fa-desktop"></i>Dashboard</a></div>
-      <div class="item">
-        <a class="sub-btn"><i class="fas fa-table"></i>Revenue Collection<i class="fas fa-angle-right dropdown"></i></a>
-        <div class="sub-menu">
-          <a href="document.php" class="sub-item active">Document Tracking</a>
-          <a href="transaction.php" class="sub-item">Transaction</a>
-        </div>
-      </div>
+      <div class="item active"><a href="document.php"><i class="fas fa-folder"></i>Document Tracking</a></div>
+      <div class="item"><a href="transaction.php"><i class="fas fa-money-check"></i>Transaction</a></div>
 
       <div class="form-item">
         <form action="logout.php" method="POST">
