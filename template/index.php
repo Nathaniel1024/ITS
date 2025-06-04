@@ -8,7 +8,9 @@
 <body>
 <h1>Municipal Treasury - Collection Report</h1>
 
-<form method="GET">
+<form method="GET" style="text-align:center;">
+    <input type="text" name="search" placeholder="Search by payer, receipt, or type" value="<?= $_GET['search'] ?? '' ?>">
+    <button type="submit">Search</button>
     <button name="report" value="daily">Daily</button>
     <button name="report" value="weekly">Weekly</button>
     <button name="report" value="monthly">Monthly</button>
@@ -35,24 +37,47 @@
         </thead>
         <tbody>
 <?php
+$search = $_GET['search'] ?? '';
 $report = $_GET['report'] ?? 'daily';
+
+$where = "1"; // always true by default
+$search = $conn->real_escape_string($search);
+if ($search != '') {
+    $where .= " AND (payer_name LIKE '%$search%' OR receipt_no LIKE '%$search%' OR revenue_type LIKE '%$search%')";
+}
+
+// Add report filter
 switch ($report) {
     case 'weekly':
-        $query = "SELECT * FROM collections WHERE YEARWEEK(collection_date, 1) = YEARWEEK(CURDATE(), 1)";
+        $where .= " AND YEARWEEK(collection_date, 1) = YEARWEEK(CURDATE(), 1)";
         break;
     case 'monthly':
-        $query = "SELECT * FROM collections WHERE YEAR(collection_date) = YEAR(CURDATE()) AND MONTH(collection_date) = MONTH(CURDATE())";
+        $where .= " AND YEAR(collection_date) = YEAR(CURDATE()) AND MONTH(collection_date) = MONTH(CURDATE())";
         break;
     case 'quarterly':
-        $query = "SELECT * FROM collections WHERE QUARTER(collection_date) = QUARTER(CURDATE()) AND YEAR(collection_date) = YEAR(CURDATE())";
+        $where .= " AND QUARTER(collection_date) = QUARTER(CURDATE()) AND YEAR(collection_date) = YEAR(CURDATE())";
         break;
     case 'annually':
-        $query = "SELECT * FROM collections WHERE YEAR(collection_date) = YEAR(CURDATE())";
+        $where .= " AND YEAR(collection_date) = YEAR(CURDATE())";
         break;
     default:
-        $query = "SELECT * FROM collections WHERE DATE(collection_date) = CURDATE()";
+        $where .= " AND DATE(collection_date) = CURDATE()";
 }
+
+// Pagination
+$limit = 10;
+$page = $_GET['page'] ?? 1;
+$offset = ($page - 1) * $limit;
+
+$countQuery = "SELECT COUNT(*) as total FROM collections WHERE $where";
+$countResult = $conn->query($countQuery);
+$totalRows = $countResult->fetch_assoc()['total'];
+$totalPages = ceil($totalRows / $limit);
+
+// Main query
+$query = "SELECT * FROM collections WHERE $where ORDER BY collection_date DESC LIMIT $limit OFFSET $offset";
 $result = $conn->query($query);
+
 if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "<tr>
@@ -71,11 +96,19 @@ if ($result && $result->num_rows > 0) {
         </tr>";
     }
 } else {
-    echo "<tr><td colspan='9'>No records found for this period.</td></tr>";
+    echo "<tr><td colspan='9'>No records found.</td></tr>";
 }
 ?>
         </tbody>
     </table>
+
+    <div class="pagination">
+        <?php if ($totalPages > 1): ?>
+            <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                <a href="?<?= http_build_query(array_merge($_GET, ['page' => $i])) ?>" class="<?= $i == $page ? 'active' : '' ?>"><?= $i ?></a>
+            <?php endfor; ?>
+        <?php endif; ?>
+    </div>
 </div>
 </body>
 </html>
