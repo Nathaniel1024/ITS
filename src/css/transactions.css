@@ -217,10 +217,12 @@ canvas {
 .finance-summary {
     display: flex;
     gap: 20px;
-    justify-content: center; /* Ensures even spacing */
-    align-items: center; /* Aligns vertically */
-    flex-wrap: wrap; /* Allows responsiveness */
-    margin-bottom: 20px;
+    justify-content: center; /* Centers cards horizontally */
+    align-items: center; /* Vertically center contents inside cards */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 20px auto; /* Centers container and bottom margin */
 }
 
 .card {
@@ -229,10 +231,21 @@ canvas {
     border-radius: 5px;
     text-align: center;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-    flex: 1;
-    min-width: 200px; /* Prevents excessive shrinking */
-    max-width: 300px; /* Keeps cards readable */
     color: rgb(0, 0, 0);
+
+    flex: 1 1 250px; /* Grow and shrink with base width 250px */
+    max-width: 300px; /* Prevent cards from getting too wide */
+    min-width: 200px; /* Prevent cards from shrinking too much */
+    height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+}
+
+.transaction-form button {
+    display: block;
+    margin: 0 auto; /* Centers horizontally */
 }
 
 .transaction-form {
@@ -322,16 +335,17 @@ button:hover {
 button.edit-btn {
     background: #4CAF50; /* Green */
     color: white;
-}
-
-button.update-btn {
-    background: #00a4fc; /* Blue */
-    color: white;
+    margin-bottom: 10px;
 }
 
 /* Delete Button */
 button.delete-btn {
     background: #E74C3C; /* Red */
+    color: white;
+}
+
+button.history-btn {
+    background: #00a4fc; /* Blue */
     color: white;
 }
 
@@ -355,18 +369,25 @@ button.delete-btn {
     min-width: 300px; /* Ensure a reasonable width */
 }
 
-
 .modal-content {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers elements */
+    justify-content: center; /* Vertically aligns */
+    width: 100%;
+    max-width: 500px; /* Adjust based on need */
+    padding: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 
 label, input {
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   color: rgb(0, 0, 0);
-}
-
-.edit-button, .status-btn{
-  margin-top: 20px;
 }
 
 .modal button {
@@ -394,28 +415,32 @@ label, input {
   text-align: center;
 }
 
-/* Status-based styling */
-.status {
-  padding: 6px 10px;
-  border-radius: 4px;
-  font-weight: bold;
+.status-badge {
   display: inline-block;
-}
-
-/* Individual status colors */
-.status.awaiting-approval {
-  background-color: #ffc107; /* Yellow */
-  color: black;
-}
-
-.status.completed {
-  background-color: #28a745; /* Green */
+  padding: 5px 12px;
+  border-radius: 15px;
   color: white;
+  font-weight: 600;
+  font-size: 0.9em;
+  min-width: 90px;
+  text-align: center;
+  user-select: none;
+  cursor: default;
+  text-transform: capitalize;
 }
 
-.status.verified {
-  background-color: #007bff; /* Blue */
-  color: white;
+/* Status colors */
+.status-badge.completed {
+  background-color: #28a745; /* green */
 }
 
+.status-badge.awaiting-approval {
+  background-color: #ffc107; /* yellow/orange */
+  color: #212529;
+}
 
+.status-badge.verified {
+  background-color: #007bff; /* blue */
+}
+
+/* Add more if you have other statuses */
