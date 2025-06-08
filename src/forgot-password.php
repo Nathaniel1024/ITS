@@ -40,7 +40,7 @@ if (isset($_POST['email'])) {
         mysqli_stmt_bind_param($stmt, 'sss', $email, $token, $expires);
         mysqli_stmt_execute($stmt);
 
-        $resetLink = "http://localhost/municipal/src/reset-password.php?token=" . urlencode($token);
+        $resetLink = "http://localhost/me/ITS/src/reset-password.php?token=" . urlencode($token);
         $subject = "Password Reset Request";
         $message = "Click the following link to reset your password: <a href=\"$resetLink\">Reset Password</a>";
 
@@ -52,13 +52,13 @@ if (isset($_POST['email'])) {
             $mail->isSMTP();                                            //Send using SMTP
             $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'pennywisesystem@gmail.com';                     //SMTP username
-            $mail->Password   = 'beug soro ixfm gqyh';                               //SMTP password
+            $mail->Username   = 'jeraldcruz100@gmail.com';                     //SMTP username
+            $mail->Password   = 'kiwh amvr zxsh sjiv';                               //SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;           //Enable implicit TLS encryption
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
     
             //Recipients
-            $mail->setFrom($email, 'Pennywise Bot');
+            $mail->setFrom($email, 'Nathaniel Bot');
             $mail->addAddress($email);     //Add a recipient
     
             //Content
@@ -85,7 +85,7 @@ if (isset($_POST['email'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="img/logo.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/Bearwon-Dark.png" type="image/x-icon">
     <title>Forgot Password</title>
 </head>
 <body>
@@ -95,10 +95,9 @@ if (isset($_POST['email'])) {
         <input type="email" name="email" required> <br>
         <button type="submit" name="forgot-password">Reset Password</button>
         <br>
-        <p>Remembered your password? <a href="login.php">Login</a></p>
+        <p>Remembered your password? <a href="index.html">Login</a></p>
         <p style="color: red; text-align:center;"><?php echo $message; ?></p> <!-- Display the login message here -->
     </form>
 </body>
 </html>
-
 
