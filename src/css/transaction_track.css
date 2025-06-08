@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  min-height: 100vh;
+  background: #F3F3E0;
+  color: white;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Side Bar Styles */
+.side-bar{
+  background: linear-gradient(180deg, #4a6fa5 0%, #2c4875 100%);
+  backdrop-filter: blur(15px);
+  width: 267px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -267px;
+  overflow-y: auto;
+  transition: 0.6s ease;
+  transition-property: left;
+}
+.side-bar::-webkit-scrollbar {
+  width: 0px;
+}
+.side-bar.active{
+  left: 0;
+}
+h1{
+  text-align: center;
+  font-weight: 500;
+  font-size: 25px;
+  padding-bottom: 13px;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+}
+.side-bar .menu{
+  width: 100%;
+  margin-top: 30px;
+}
+.side-bar .menu .item{
+  position: relative;
+  cursor: pointer;
+}
+.side-bar .menu .item a{
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  display: block;
+  padding: 5px 30px;
+  line-height: 60px;
+}
+.side-bar .menu .item a:hover{
+  background: linear-gradient(180deg, #4a6fa5 0%, #2c4875 100%);
+  transition: 0.3s ease;
+}
+.side-bar .menu .item.active > a{
+  background: #5e8bcf;
+  transition: 0.3s ease;
+}
+.side-bar .menu .item i{
+  margin-right: 15px;
+}
+.side-bar .menu .item a .dropdown{
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  transition: 0.3s ease;
+}
+.side-bar .menu .item .sub-menu{
+  background: linear-gradient(180deg, #4a6fa5 0%, #2c4875 100%);
+  display: none;
+}
+.side-bar .menu .item .sub-menu a{
+  padding-left: 80px;
+}
+.rotate{
+  transform: rotate(90deg);
+}
+.close-btn{
+  position: absolute;
+  color: #fff;
+  font-size: 23px;
+  right:  0px;
+  margin: 15px;
+  cursor: pointer;
+}
+.menu-btn{
+  position: fixed;
+  color: rgb(0, 0, 0);
+  font-size: 35px;
+  margin: 25px;
+  cursor: pointer;
+}
+
+/* Main Section */
+.main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+.main h1{
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 60px;
+  text-align: center;
+  line-height: 80px;
+  margin-bottom: 30px;
+}
+.main h2{
+  color: #333;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+/* General Table Styling */
+.table, .tracking-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+.table th, .table td, .tracking-table th, .tracking-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+  color: #222;
+  background: #fff;
+}
+.table th, .tracking-table th {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Button Styles */
+.add-btn, .view-btn, .edit-btn, .delete-btn, #saveBtn, #editBtn, #cancelBtn {
+  padding: 6px 12px;
+  margin: 2px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #007bff;
+  color: #fff;
+  transition: background 0.2s;
+  font-size: 14px;
+}
+.add-btn:hover, .view-btn:hover, .edit-btn:hover, .delete-btn:hover, #saveBtn:hover, #editBtn:hover, #cancelBtn:hover {
+  background: #0056b3;
+}
+.edit-btn {
+  background: #4CAF50;
+}
+.edit-btn:hover {
+  background: #388e3c;
+}
+.delete-btn {
+  background: #E74C3C;
+}
+.delete-btn:hover {
+  background: #c0392b;
+}
+
+/* Modal Styles */
+.modal {
+  display: flex;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  min-width: 320px;
+  max-width: 90vw;
+  margin: auto;
+  box-sizing: border-box;
+}
+.modal-content label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #222;
+}
+.modal-content input[type="text"],
+.modal-content select,
+.modal-content textarea {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #222;
+  background: #f9f9f9;
+}
+.modal-buttons {
+  margin-top: 10px;
+  text-align: right;
+}
+#activityHistory {
+  margin-top: 20px;
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 4px;
+  max-height: 150px;
+  overflow-y: auto;
+  font-size: 0.95em;
+  color: #222;
+}
+#trackingModal {
+  display: none;
+}
+/* H2 */
+
+
+/* Responsive Design */
+@media (max-width: 900px){
+  .main h1{
+    font-size: 40px;
+    line-height: 60px;
+  }
+  .main {
+    padding: 20px;
+  }
+  .modal-content {
+    min-width: 90vw;
+    padding: 1rem;
+  }
+  .table, .tracking-table {
+    font-size: 13px;
+  }
+  .modal-content input[type="text"],
+  .modal-content select,
+  .modal-content textarea {
+    font-size: 13px;
+  }
+}
+@media (max-width: 600px) {
+  .table, .tracking-table {
+    font-size: 11px;
+  }
+  .modal-content {
+    min-width: 98vw;
+    padding: 0.5rem;
+  }
+  .modal-content label {
+    font-size: 13px;
+  }
+  .main h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+/* Logo and Header */
+img{
+  width: 100px;
+  margin: 15px;
+  border-radius: 50%;
+  margin-left: 70px;
+  border: 3px solid #b4b8b9;
+}
+header{
+  background: linear-gradient(180deg, #4a6fa5 0%, #2c4875 100%);
+}
+
+/* Logout Button */
+.logout-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  display: block;
+  padding: 5px 30px;
+  line-height: 60px;
+  width: 100%;
+  text-align: left;
+}
+.logout-btn:hover {
+  background: linear-gradient(180deg, #4a6fa5 0%, #2c4875 100%);
+  transition: 0.3s ease;
+}
+.logout-btn i {
+  margin-right: 15px;
+}
+.logout-form {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
