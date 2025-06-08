@@ -5,11 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard</title>
-<<<<<<< HEAD
   <link rel="stylesheet" href="css/transactions.css">
-=======
-  <link rel="stylesheet" href="css/transaction.css">
->>>>>>> 06afa0bbbeef7c79b76183e3140688a5ee2a6079
   <link rel="shortcut icon" href="img/logo.jpg" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
@@ -48,7 +44,6 @@
   <section class="main">
     <h1>Transaction Management</h1>
 
-<<<<<<< HEAD
     <?php
     require_once 'config/db.php'; // Include your database connection file
     session_start();
@@ -103,40 +98,10 @@
         <input type="text" name="guarantorName" placeholder="Guarantor Name" required>
         <label for="updateStatus">Status</label>
         <select name="updateStatus" required>
-=======
-    <!-- Financial Overview Cards -->
-    <div class="finance-summary">
-        <div class="card">
-            <h3>Total<br>Collections</h3>
-            <p>₱ <span id="totalCollections">0</span></p>
-        </div>
-        <div class="card">
-            <h3>Total Disbursements</h3>
-            <p>₱ <span id="totalDisbursement">0</span></p>
-        </div>
-        <div class="card">
-            <h3>Remaining Balance</h3>
-            <p>₱ <span id="remainingBalance">0</span></p>
-        </div>
-    </div>
-
-    <!-- Transaction Form -->
-    <div class="transaction-form">
-      <h2>Add New Transaction</h2>
-      <form id="transactionForm">
-        <input type="text" id="payerName" placeholder="Payer Name" required>
-        <input type="number" id="amount" placeholder="Amount (₱)" required>
-        <select id="transactionType">
-          <option value="Collection">Collection</option>
-          <option value="Disbursement">Disbursement</option>
-        </select>
-        <select id="updateStatus">
->>>>>>> 06afa0bbbeef7c79b76183e3140688a5ee2a6079
           <option value="Completed">Completed</option>
           <option value="Awaiting Approval">Awaiting Approval</option>
           <option value="Verified">Verified</option>
         </select>
-<<<<<<< HEAD
         <button type="submit">Submit</button>
       </form>
     </div>
@@ -165,57 +130,20 @@
             </div>
             <label>Status:</label>
             <div class=form-group>
-=======
-        <button type="submit">Add Transaction</button>
-      </form>
-    </div>
-
-    <!-- Edit Mode -->
-    <div id="editModal" class="modal">
-    <div class="modal-content">
-        <h2>Edit Transaction</h2>
-        <div class="content">
-        <form id="editTransactionForm">
-            <label>Payer Name:</label>
-            <input type="text" id="editPayerName">
-            
-            <label>Amount:</label>
-            <input type="number" id="editAmount">
-            
-            <label>Transaction Type:</label>
-            <select id="editTransactionType">
-                <option value="Collection">Collection</option>
-                <option value="Disbursement">Disbursement</option>
-            </select>
-            <br>
-            <div class="status-btn">
-              <label>Status:</label>
->>>>>>> 06afa0bbbeef7c79b76183e3140688a5ee2a6079
               <select id="editStatusType">
                 <option value="Completed">Completed</option>
                 <option value="Awaiting Approval">Awaiting Approval</option>
                 <option value="Verified">Verified</option>
               </select>
-<<<<<<< HEAD
-=======
-              <br>
->>>>>>> 06afa0bbbeef7c79b76183e3140688a5ee2a6079
             </div>
             <div class="edit-button">
               <button type="submit">Update Transaction</button>
               <button type="button" onclick="closeEditModal()">Cancel</button>
             </div>
-<<<<<<< HEAD
           </form>
         </div>
       </div>
     </div>
-=======
-        </form>
-        </div>
-    </div>
-</div>
->>>>>>> 06afa0bbbeef7c79b76183e3140688a5ee2a6079
 
     <!-- Transaction Records Table -->
     <div class="transaction-table">
@@ -235,7 +163,6 @@
             </th>
             <th>Amount</th>
             <th>Date</th>
-<<<<<<< HEAD
             <th>Time</th>
             <th>Guarantor</th>
             <th>Status</th>
@@ -283,18 +210,6 @@
       </table>
     </div>
   </section>
-=======
-            <th>Status</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody id="transactionList">
-          <!-- Dynamic Transactions Will Load Here -->
-        </tbody>
-      </table>
-    </div>
-</section>
->>>>>>> 06afa0bbbeef7c79b76183e3140688a5ee2a6079
 
   <script src="js/dashboard.js"></script>
   <script src="js/transaction.js"></script>

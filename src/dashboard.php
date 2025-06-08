@@ -33,19 +33,10 @@ if (!isset($_SESSION['user'])) {
       <img src="img/pennywise-logo.jpg" alt="Pennywise logo">
       <h1>Pennywise</h1>
     </header>
-<<<<<<< HEAD
     <nav class="menu">
       <div class="item active"><a href="dashboard.php"><i class="fas fa-desktop"></i> Dashboard</a></div>
       <div class="item"><a href="transaction_track.php"><i class="fas fa-folder"></i> Tracking</a></div>
       <div class="item"><a href="transaction.php"><i class="fas fa-money-check"></i> Transaction</a></div>
-=======
-    <div class="menu">
-
-      <div class="item active"><a href="dashboard.php"><i class="fas fa-desktop"></i>Dashboard</a></div>
-      <div class="item"><a href="document.php"><i class="fas fa-folder"></i>Document Tracking</a></div>
-      <div class="item"><a href="transaction.php"><i class="fas fa-money-check"></i>Transaction</a></div>
-
->>>>>>> 06afa0bbbeef7c79b76183e3140688a5ee2a6079
       <div class="form-item">
         <form action="logout.php" method="POST">
           <button type="submit" class="logout-btn"><i class="fas fa-info-circle"></i> Logout</button>
