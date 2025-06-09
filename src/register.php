@@ -20,7 +20,7 @@
             $sql = "INSERT INTO users (name, email, password) VALUES ('$username', '$email', '$hashedPassword')";
 
             if(mysqli_query($db, $sql)){
-                header("Location: index.html");
+                header("Location: index.php");
                 exit();
             } else {
                 $message = "Error: " . $sql . "<br>" . mysqli_error($db);
@@ -54,7 +54,7 @@
         <!-- Register Button -->
         <button type="submit" name="register">Register</button>
         <!-- Message -->
-        <p>Already have an account? <a href="index.html">Login</a></p>
+        <p>Already have an account? <a href="index.php">Login</a></p>
         <p style="color: red; text-align:center;"><?php echo $message; ?></p> <!-- Display the login message here -->
     </form>
 </body>

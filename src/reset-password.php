@@ -45,7 +45,7 @@ if (isset($_POST['reset-password'])) {
         mysqli_stmt_execute($stmt);
 
         $message = "Password reset successful. Redirecting to the homepage...";
-        header("refresh:3;url=index.html");
+        header("refresh:3;url=index.php");
     }
 }
 ?>

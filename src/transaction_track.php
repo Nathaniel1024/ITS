@@ -44,7 +44,7 @@
     require_once 'config/db.php'; // Include your database connection file
     session_start();
     if (!isset($_SESSION['user'])) {
-      header("Location: index.html");
+      header("Location: index.php");
       exit();
     }
     // Fetch transactions without tracking details
