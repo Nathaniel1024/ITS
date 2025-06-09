@@ -18,7 +18,7 @@ if (isset($_POST['email'])) {
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
 
-    
+
 
     if (mysqli_num_rows($result) > 0) {
 
@@ -29,7 +29,7 @@ if (isset($_POST['email'])) {
         mysqli_stmt_execute($deleteStmt);
 
         session_start();
-        
+
         $token = bin2hex(random_bytes(50));
         $_SESSION['token'] = $token;
         $_SESSION['email'] = $email;
@@ -40,6 +40,11 @@ if (isset($_POST['email'])) {
         mysqli_stmt_bind_param($stmt, 'sss', $email, $token, $expires);
         mysqli_stmt_execute($stmt);
 
+        // Change the link to your own domain or localhost
+        // For example, if your domain is example.com, the link would be:
+        // http://example.com/reset-password.php?token=
+        // If you are testing locally, you can use localhost
+        // http://localhost/reset-password.php?token=
         $resetLink = "http://localhost/me/ITS/src/reset-password.php?token=" . urlencode($token);
         $subject = "Password Reset Request";
         $message = "Click the following link to reset your password: <a href=\"$resetLink\">Reset Password</a>";
@@ -52,26 +57,25 @@ if (isset($_POST['email'])) {
             $mail->isSMTP();                                            //Send using SMTP
             $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'jeraldcruz100@gmail.com';                     //SMTP username
-            $mail->Password   = 'kiwh amvr zxsh sjiv';                               //SMTP password
+            $mail->Username   = 'your username here';                     //SMTP username
+            $mail->Password   = 'your password here';                               //SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;           //Enable implicit TLS encryption
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-    
+
             //Recipients
-            $mail->setFrom($email, 'Nathaniel Bot');
+            $mail->setFrom($email, 'Pennywise Bot');
             $mail->addAddress($email);     //Add a recipient
-    
+
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = 'Reset Password Link';
-            $mail->Body    = 'Hello '.$email.',<br>Click the link below to reset your password.<br><a href="'.$resetLink.'">Reset Password</a>';
-    
+            $mail->Body    = 'Hello ' . $email . ',<br>Click the link below to reset your password.<br><a href="' . $resetLink . '">Reset Password</a>';
+
             $mail->send();
             $message = 'Message has been sent, please check your email';
         } catch (Exception $e) {
             $message = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
-        
     } else {
         $message = "User does not exist!";
     }
@@ -80,6 +84,7 @@ if (isset($_POST['email'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -88,6 +93,7 @@ if (isset($_POST['email'])) {
     <link rel="shortcut icon" href="assets/Bearwon-Dark.png" type="image/x-icon">
     <title>Forgot Password</title>
 </head>
+
 <body>
     <form action="forgot-password.php" method="post">
         <h1>Forgot Password</h1>
@@ -99,5 +105,5 @@ if (isset($_POST['email'])) {
         <p style="color: red; text-align:center;"><?php echo $message; ?></p> <!-- Display the login message here -->
     </form>
 </body>
-</html>
 
+</html>
