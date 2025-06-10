@@ -267,6 +267,14 @@ canvas {
 
 .transaction-table {
     width: 80%;
+    overflow-x: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .transaction-table {
+        width: 100%; /* Adjusts width for smaller screens */
+    }
+  
 }
 
 h2 {
@@ -284,19 +292,22 @@ h2 {
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
 }
 
 table th, table td {
-    padding: 12px;
-    border: 1px solid #ccc;
-    text-align: left;
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+  color: #222;
+  background: #fff;
 }
 
 table th {
-    background-color: #333;
-    color: white;
+  background-color: #333;
+  color: #fff;
 }
 
 table td {
