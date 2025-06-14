@@ -94,7 +94,7 @@
           <option value="Collection">Collection</option>
           <option value="Disbursement">Disbursement</option>
         </select>
-        <input type="number" name="amount" step="0.01" placeholder="Amount" required>
+        <input type="number" name="amount" min="1" step="0.01" placeholder="Amount" required>
         <input type="text" name="guarantorName" placeholder="Guarantor Name" required>
         <label for="updateStatus">Status</label>
         <select name="updateStatus" required>
@@ -119,7 +119,7 @@
             </div>
             <label>Amount:</label>
             <div class=form-group>
-              <input type="number" id="editAmount" step="0.01" placeholder="Amount" required>
+              <input type="number" id="editAmount" min="1" step="0.01" placeholder="Amount" required>
             </div>
             <label for="editransactionType">Transaction Type</label>
             <div class=form-group>
