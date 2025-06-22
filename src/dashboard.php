@@ -37,6 +37,7 @@ if (!isset($_SESSION['user'])) {
       <div class="item active"><a href="dashboard.php"><i class="fas fa-desktop"></i> Dashboard</a></div>
       <div class="item"><a href="transaction_track.php"><i class="fas fa-folder"></i> Tracking</a></div>
       <div class="item"><a href="transaction.php"><i class="fas fa-money-check"></i> Transaction</a></div>
+      <div class="item"><a href="online_billing.php"><i class="fas fa-money-bill"></i>Online Billing</a></div>
       <div class="form-item">
         <form action="logout.php" method="POST">
           <button type="submit" class="logout-btn"><i class="fas fa-info-circle"></i> Logout</button>

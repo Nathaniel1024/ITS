@@ -217,10 +217,12 @@ canvas {
 .finance-summary {
     display: flex;
     gap: 20px;
-    justify-content: center; /* Ensures even spacing */
-    align-items: center; /* Aligns vertically */
-    flex-wrap: wrap; /* Allows responsiveness */
-    margin-bottom: 20px;
+    justify-content: center; /* Centers cards horizontally */
+    align-items: center; /* Vertically center contents inside cards */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 20px auto; /* Centers container and bottom margin */
 }
 
 .card {
@@ -229,10 +231,21 @@ canvas {
     border-radius: 5px;
     text-align: center;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-    flex: 1;
-    min-width: 200px; /* Prevents excessive shrinking */
-    max-width: 300px; /* Keeps cards readable */
     color: rgb(0, 0, 0);
+
+    flex: 1 1 250px; /* Grow and shrink with base width 250px */
+    max-width: 300px; /* Prevent cards from getting too wide */
+    min-width: 200px; /* Prevent cards from shrinking too much */
+    height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+}
+
+.transaction-form button {
+    display: block;
+    margin: 0 auto; /* Centers horizontally */
 }
 
 .transaction-form {
@@ -254,6 +267,14 @@ canvas {
 
 .transaction-table {
     width: 80%;
+    overflow-x: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .transaction-table {
+        width: 100%; /* Adjusts width for smaller screens */
+    }
+  
 }
 
 h2 {
@@ -271,19 +292,22 @@ h2 {
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
 }
 
 table th, table td {
-    padding: 12px;
-    border: 1px solid #ccc;
-    text-align: left;
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+  color: #222;
+  background: #fff;
 }
 
 table th {
-    background-color: #333;
-    color: white;
+  background-color: #333;
+  color: #fff;
 }
 
 table td {
@@ -322,16 +346,11 @@ button:hover {
 button.edit-btn {
     background: #4CAF50; /* Green */
     color: white;
+    margin-bottom: 10px;
 }
 
-button.update-btn {
-    background: #00a4fc; /* Blue */
-    color: white;
-}
-
-/* Delete Button */
-button.delete-btn {
-    background: #E74C3C; /* Red */
+button.print-btn {
+    background: #5bb6f3; 
     color: white;
 }
 
@@ -355,18 +374,25 @@ button.delete-btn {
     min-width: 300px; /* Ensure a reasonable width */
 }
 
-
 .modal-content {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers elements */
+    justify-content: center; /* Vertically aligns */
+    width: 100%;
+    max-width: 500px; /* Adjust based on need */
+    padding: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 
 label, input {
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   color: rgb(0, 0, 0);
-}
-
-.edit-button, .status-btn{
-  margin-top: 20px;
 }
 
 .modal button {
@@ -392,30 +418,6 @@ label, input {
   padding: 10px;
   border: 1px solid #ddd;
   text-align: center;
-}
-
-/* Status-based styling */
-.status {
-  padding: 6px 10px;
-  border-radius: 4px;
-  font-weight: bold;
-  display: inline-block;
-}
-
-/* Individual status colors */
-.status.awaiting-approval {
-  background-color: #ffc107; /* Yellow */
-  color: black;
-}
-
-.status.completed {
-  background-color: #28a745; /* Green */
-  color: white;
-}
-
-.status.verified {
-  background-color: #007bff; /* Blue */
-  color: white;
 }
 
 
