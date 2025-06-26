@@ -63,7 +63,6 @@ CREATE TABLE tracking_history (
     FOREIGN KEY (tracking_id) REFERENCES tracking_details(tracking_id)
 );
 
-<<<<<<< HEAD
 CREATE TABLE online_billing (
     id INT AUTO_INCREMENT PRIMARY KEY,
     invoice_code VARCHAR(20) UNIQUE,
@@ -76,8 +75,6 @@ CREATE TABLE online_billing (
     payment_options ENUM('GCash', 'PayMaya', 'Credit Card', 'Debit Card') NOT NULL
 );
 
-=======
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
 CREATE TABLE `budget` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `budget` double NOT NULL,

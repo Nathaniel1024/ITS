@@ -59,7 +59,7 @@ $data = $result->fetch_assoc();
 
 <div class="receipt">
     <div class="receipt-header">
-        Pennywise<br>
+        My Office Name<br>
         123 Office Street, City<br>
         ------------------------------
     </div>

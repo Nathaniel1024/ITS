@@ -1,4 +1,3 @@
-<<<<<<< HEAD
  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 *{
@@ -26,42 +25,10 @@ body{
  overflow-y: auto;
  transition: 0.6s ease;
  transition-property: left;
-=======
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
-body{
-  min-height: 100vh;
-  background: #F3F3E0;
-  color: white;
-  background-size: cover;
-  background-position: center;
-}
-
-/* Side Bar Styles */
-.side-bar{
-  background: linear-gradient(180deg, #4a6fa5 0%, #2c4875 100%);
-  backdrop-filter: blur(15px);
-  width: 267px;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: -267px;
-  overflow-y: auto;
-  transition: 0.6s ease;
-  transition-property: left;
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
 }
 .side-bar::-webkit-scrollbar {
   width: 0px;
 }
-<<<<<<< HEAD
 
 .side-bar.active{
  left: 0;
@@ -72,20 +39,12 @@ h1{
   align-items: flex-start;
   justify-content: flex-start;
   margin: 0;
-=======
-.side-bar.active{
-  left: 0;
-}
-h1{
-  text-align: center;
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
   font-weight: 500;
   font-size: 25px;
   padding-bottom: 13px;
   font-family: sans-serif;
   letter-spacing: 2px;
 }
-<<<<<<< HEAD
 */
 .side-bar .menu{
  width: 100%;
@@ -239,106 +198,6 @@ table tr:last-child td:first-child {
 table tr:last-child td:last-child {
   border-bottom-right-radius: 14px;
 }
-=======
-.side-bar .menu{
-  width: 100%;
-  margin-top: 30px;
-}
-.side-bar .menu .item{
-  position: relative;
-  cursor: pointer;
-}
-.side-bar .menu .item a{
-  color: #fff;
-  font-size: 16px;
-  text-decoration: none;
-  display: block;
-  padding: 5px 30px;
-  line-height: 60px;
-}
-.side-bar .menu .item a:hover{
-  background: linear-gradient(180deg, #4a6fa5 0%, #2c4875 100%);
-  transition: 0.3s ease;
-}
-.side-bar .menu .item.active > a{
-  background: #5e8bcf;
-  transition: 0.3s ease;
-}
-.side-bar .menu .item i{
-  margin-right: 15px;
-}
-.side-bar .menu .item a .dropdown{
-  position: absolute;
-  right: 0;
-  margin: 20px;
-  transition: 0.3s ease;
-}
-.side-bar .menu .item .sub-menu{
-  background: linear-gradient(180deg, #4a6fa5 0%, #2c4875 100%);
-  display: none;
-}
-.side-bar .menu .item .sub-menu a{
-  padding-left: 80px;
-}
-.rotate{
-  transform: rotate(90deg);
-}
-.close-btn{
-  position: absolute;
-  color: #fff;
-  font-size: 23px;
-  right:  0px;
-  margin: 15px;
-  cursor: pointer;
-}
-.menu-btn{
-  position: fixed;
-  color: rgb(0, 0, 0);
-  font-size: 35px;
-  margin: 25px;
-  cursor: pointer;
-}
-
-/* Main Section */
-.main{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 50px;
-}
-.main h1{
-  color: rgba(0, 0, 0, 0.8);
-  font-size: 60px;
-  text-align: center;
-  line-height: 80px;
-  margin-bottom: 30px;
-}
-.main h2{
-  color: #333;
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-/* General Table Styling */
-.table, .tracking-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 2rem;
-}
-.table th, .table td, .tracking-table th, .tracking-table td {
-  border: 1px solid #ccc;
-  padding: 8px;
-  text-align: center;
-  color: #222;
-  background: #fff;
-}
-.table th, .tracking-table th {
-  background-color: #333;
-  color: #fff;
-}
-
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
 /* Button Styles */
 .add-btn, .view-btn, .edit-btn, .delete-btn, #saveBtn, #editBtn, #cancelBtn {
   padding: 6px 12px;
@@ -349,11 +208,7 @@ table tr:last-child td:last-child {
   background: #007bff;
   color: #fff;
   transition: background 0.2s;
-<<<<<<< HEAD
   font-size: 25px;
-=======
-  font-size: 14px;
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
 }
 .add-btn:hover, .view-btn:hover, .edit-btn:hover, .delete-btn:hover, #saveBtn:hover, #editBtn:hover, #cancelBtn:hover {
   background: #0056b3;

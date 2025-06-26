@@ -1,17 +1,9 @@
-<<<<<<< HEAD
  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-=======
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
 
 *{
  margin: 0;
  padding: 0;
  box-sizing: border-box;
-<<<<<<< HEAD
-=======
- font-family: "Poppins", sans-serif;
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
 }
 
 body{
@@ -41,29 +33,19 @@ body{
 .side-bar.active{
  left: 0;
 }
-<<<<<<< HEAD
 /*
 h1{
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   margin: 0;
-=======
-h1{
-
-  text-align: center;
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
   font-weight: 500;
   font-size: 25px;
   padding-bottom: 13px;
   font-family: sans-serif;
   letter-spacing: 2px;
 }
-<<<<<<< HEAD
 */
-=======
-
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
 .side-bar .menu{
  width: 100%;
  margin-top: 30px;
@@ -113,16 +95,6 @@ h1{
  padding-left: 80px;
 }
 
-<<<<<<< HEAD
-=======
-/* Active for the revenue collection dropdown */
-.sub-item.active {
-  background: #5e8bcf;
-  color: #fff;
-  transition: 0.3s ease;
-}
-
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
 .rotate{
  transform: rotate(90deg);
 }
@@ -139,7 +111,6 @@ h1{
 
 .menu-btn{
  position: fixed;
-<<<<<<< HEAD
  color: #183B4E;
  font-size: 45px;
  height: 200px;
@@ -168,14 +139,6 @@ h1{
 }
 /*MAIN SECTION*/
 
-=======
- color: rgb(0, 0, 0);
- font-size: 35px;
- margin: 25px;
- cursor: pointer;
-}
-
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
 .main{
  /* height: 100vh; */
  display: flex;
@@ -271,7 +234,6 @@ canvas {
 .finance-summary {
     display: flex;
     gap: 20px;
-<<<<<<< HEAD
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -298,35 +260,12 @@ canvas {
     min-width: 200px; 
     height: 250px;
     row-gap: 30px;
-=======
-    justify-content: center; /* Centers cards horizontally */
-    align-items: center; /* Vertically center contents inside cards */
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto 20px auto; /* Centers container and bottom margin */
-}
-
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-    color: rgb(0, 0, 0);
-
-    flex: 1 1 250px; /* Grow and shrink with base width 250px */
-    max-width: 300px; /* Prevent cards from getting too wide */
-    min-width: 200px; /* Prevent cards from shrinking too much */
-    height: 150px;
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
 
     display: flex;
     flex-direction: column;
     justify-content: center; /* Vertically center content */
 }
 
-<<<<<<< HEAD
 .card h3 {
     margin-bottom: 10px;
     font-family: 'Montserrat', sans-serif;
@@ -356,15 +295,12 @@ canvas {
  color: black;
 }
 
-=======
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
 .transaction-form button {
     display: block;
     margin: 0 auto; /* Centers horizontally */
 }
 
 .transaction-form {
-<<<<<<< HEAD
     width: 85%;
     padding-left: 100px;
     padding-top: 50px;
@@ -420,17 +356,6 @@ canvas {
 
 
 .name input[type="text"] {
-=======
-    width: 50%;
-    padding: 20px;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    margin-bottom: 30px;
-}
-
-.transaction-form input, .transaction-form select {
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -438,7 +363,6 @@ canvas {
     border-radius: 5px;
 }
 
-<<<<<<< HEAD
 .submit{
   margin-top: 20px;
   background-color: #219626;
@@ -536,11 +460,6 @@ table tr:last-child td:first-child {
 }
 table tr:last-child td:last-child {
   border-bottom-right-radius: 14px;
-=======
-.transaction-table {
-    width: 80%;
-    overflow-x: auto;
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
 }
 
 @media screen and (max-width: 768px) {

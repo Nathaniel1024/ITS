@@ -69,37 +69,10 @@
     $remainingBalance = $totalCollections - $totalDisbursements;
     ?>
 
-    <?php
-    require_once 'config/db.php'; // Include your database connection file
-    session_start();
-    if (!isset($_SESSION['user'])) {
-      header("Location: index.php");
-      exit();
-    }
-
-    $resultCollections = $db->query("SELECT SUM(amount) AS total_collections FROM transactions WHERE transaction_type = 'Collection'");
-    $totalCollections = 0;
-    if ($resultCollections && $row = $resultCollections->fetch_assoc()) {
-      $totalCollections = $row['total_collections'] ?? 0;
-    }
-
-    $resultDisbursements = $db->query("SELECT SUM(amount) AS total_disbursements FROM transactions WHERE transaction_type = 'Disbursement'");
-    $totalDisbursements = 0;
-    if ($resultDisbursements && $row = $resultDisbursements->fetch_assoc()) {
-      $totalDisbursements = $row['total_disbursements'] ?? 0;
-    }
-
-    $remainingBalance = $totalCollections - $totalDisbursements;
-    ?>
-
     <!-- Financial Overview Cards -->
     <div class="finance-summary">
       <div class="card">
-<<<<<<< HEAD
         <h3>Total Collections</h3>
-=======
-        <h3>Total<br>Collections</h3>
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
         <p>₱ <span id="totalCollections"><?= number_format($totalCollections, 2) ?></span></p>
       </div>
       <div class="card">
@@ -116,7 +89,6 @@
     <!-- Transaction Form -->
     <h1 class="add">Add New Transaction</h1>
     <div class="transaction-form">
-<<<<<<< HEAD
       <form id="transactionForm" method="POST" action="config/add_transaction.php">
         <div class="name">
           <label for="payerName">Payer Name</label>
@@ -142,39 +114,13 @@
           </div>
         </div>
         <button class="submit" type="submit">Submit</button>
-=======
-      <h2>Add New Transaction</h2>
-      <form id="transactionForm" method="POST" action="config/add_transaction.php">
-        <input type="text" name="payerName" placeholder="Payer Name" required>
-        <label for="transactionType">Transaction Type</label>
-        <select id="transactionType" name="transactionType" required>
-          <option value="Collection">Collection</option>
-          <option value="Disbursement">Disbursement</option>
-        </select>
-        <input type="number" name="amount" min="1" step="0.01" placeholder="Amount" required>
-        <input type="text" name="guarantorName" placeholder="Guarantor Name" required>
-        <label for="updateStatus">Status</label>
-        <select name="updateStatus" required>
-          <option value="Completed">Completed</option>
-          <option value="Awaiting Approval">Awaiting Approval</option>
-          <option value="Verified">Verified</option>
-        </select>
-        <button type="submit">Submit</button>
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
       </form>
     </div>
 
 
-<<<<<<< HEAD
             <h1 class="Edit">Recent Transactions</h1>
     <div id="editModal" class="modal">
       <div class="modal-content">
-=======
-    <!-- Edit Mode -->
-    <div id="editModal" class="modal">
-      <div class="modal-content">
-        <h2>Edit Transaction</h2>
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
         <div class="content">
           <form id="editTransactionForm">
             <label>Payer Name:</label>

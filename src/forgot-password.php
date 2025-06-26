@@ -45,7 +45,7 @@ if (isset($_POST['email'])) {
         // http://example.com/reset-password.php?token=
         // If you are testing locally, you can use localhost
         // http://localhost/reset-password.php?token=
-        $resetLink = "http://localhost/ITS/src/reset-password.php?token=" . urlencode($token);
+        $resetLink = "http://localhost/me/ITS/src/reset-password.php?token=" . urlencode($token);
         $subject = "Password Reset Request";
         $message = "Click the following link to reset your password: <a href=\"$resetLink\">Reset Password</a>";
 
@@ -57,8 +57,8 @@ if (isset($_POST['email'])) {
             $mail->isSMTP();                                            //Send using SMTP
             $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'your username here';                     //SMTP username
-            $mail->Password   = 'your password here';                               //SMTP password
+            $mail->Username   = 'pennywisesystem@gmail.com';                     //SMTP username
+            $mail->Password   = 'etjw iftt xqqs vwuv';                               //SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;           //Enable implicit TLS encryption
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 

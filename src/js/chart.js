@@ -19,10 +19,6 @@ function createPieChart(chartData, type) {
     data: {
       labels: chartData.map(row => row.sector),
       datasets: [{
-<<<<<<< HEAD
-=======
-        label: 'Municipal Budget (₱)',
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
         data: chartData.map(row => row.budget),
         backgroundColor: [
           '#4e73df', 
@@ -41,7 +37,6 @@ function createPieChart(chartData, type) {
       plugins: {
         title: {
           display: true,
-<<<<<<< HEAD
           text: 'Budget Allocation',
           font: {
             family: 'Montserrat, sans-serif',
@@ -52,11 +47,6 @@ function createPieChart(chartData, type) {
           padding: {
             top: 20,
             bottom: 20
-=======
-          text: 'Municipal Budget (₱)',
-          font: {
-            size: isMobile ? 25 : 50
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
           }
         },
         tooltip: {
@@ -233,7 +223,6 @@ new Chart(ctx3, {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
-<<<<<<< HEAD
         title: {
           display: true,
           text: 'Annual Budget Comparison',
@@ -248,15 +237,6 @@ new Chart(ctx3, {
             bottom: 20
           }
         },
-=======
-      title: {
-        display: true,
-        text: '',
-        font: {
-          size: 18
-        }
-      },
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
       tooltip: {
         callbacks: {
           label: function(context) {
