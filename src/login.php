@@ -37,19 +37,11 @@ if (isset($_POST['login'])) {
             header("Location: dashboard.php");
             exit();
         } else {
-<<<<<<< HEAD
             header("Location: index.php");
             exit();
         }
     } else {
         header("Location: index.php");
-=======
-            header("Location: index.html");
-            exit();
-        }
-    } else {
-        header("Location: index.html");
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
         exit();
     }
 }
