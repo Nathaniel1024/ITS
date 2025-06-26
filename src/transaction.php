@@ -31,6 +31,8 @@
       <div class="item"><a href="dashboard.php"><i class="fas fa-desktop"></i>Dashboard</a></div>
       <div class="item"><a href="transaction_track.php"><i class="fas fa-folder"></i>Document Tracking</a></div>
       <div class="item active"><a href="transaction.php"><i class="fas fa-money-check"></i>Transaction</a></div>
+      <div class="item"><a href="online_billing.php"><i class="fas fa-money-bill"></i>Online Billing</a></div>
+      <div class="item"><a href="download_page.php"><i class="fas fa-download"></i> Download Center</a></div>
 
       <div class="form-item">
         <form action="logout.php" method="POST">
@@ -41,8 +43,31 @@
 
   </div>
 
-  <section class="main">
+  <section class="header">
     <h1>Transaction Management</h1>
+  </section>
+    <?php
+    require_once 'config/db.php'; // Include your database connection file
+    session_start();
+    if (!isset($_SESSION['user'])) {
+      header("Location: index.php");
+      exit();
+    }
+
+    $resultCollections = $db->query("SELECT SUM(amount) AS total_collections FROM transactions WHERE transaction_type = 'Collection'");
+    $totalCollections = 0;
+    if ($resultCollections && $row = $resultCollections->fetch_assoc()) {
+      $totalCollections = $row['total_collections'] ?? 0;
+    }
+
+    $resultDisbursements = $db->query("SELECT SUM(amount) AS total_disbursements FROM transactions WHERE transaction_type = 'Disbursement'");
+    $totalDisbursements = 0;
+    if ($resultDisbursements && $row = $resultDisbursements->fetch_assoc()) {
+      $totalDisbursements = $row['total_disbursements'] ?? 0;
+    }
+
+    $remainingBalance = $totalCollections - $totalDisbursements;
+    ?>
 
     <?php
     require_once 'config/db.php'; // Include your database connection file
@@ -70,7 +95,11 @@
     <!-- Financial Overview Cards -->
     <div class="finance-summary">
       <div class="card">
+<<<<<<< HEAD
+        <h3>Total Collections</h3>
+=======
         <h3>Total<br>Collections</h3>
+>>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
         <p>₱ <span id="totalCollections"><?= number_format($totalCollections, 2) ?></span></p>
       </div>
       <div class="card">
@@ -85,7 +114,35 @@
 
 
     <!-- Transaction Form -->
+    <h1 class="add">Add New Transaction</h1>
     <div class="transaction-form">
+<<<<<<< HEAD
+      <form id="transactionForm" method="POST" action="config/add_transaction.php">
+        <div class="name">
+          <label for="payerName">Payer Name</label>
+          <input type="text" name="payerName" placeholder="Payer Name" required>
+          <label for="guarantorName">Guarantor Name</label>
+          <input type="text" name="guarantorName" placeholder="Guarantor Name" required>
+        </div>
+        <div class="etc-group">
+          <div class="etc">
+            <label for="transactionType">Transaction Type</label>
+            <select id="transactionType" name="transactionType" required>
+              <option value="Collection">Collection</option>
+              <option value="Disbursement">Disbursement</option>
+            </select>
+            <label for="amount">Amount</label>
+            <input type="number" name="amount" min="1" step="0.01" placeholder="Amount" required>
+            <label for="updateStatus">Status</label>
+            <select name="updateStatus" required>
+              <option value="Completed">Completed</option>
+              <option value="Awaiting Approval">Awaiting Approval</option>
+              <option value="Verified">Verified</option>
+            </select>
+          </div>
+        </div>
+        <button class="submit" type="submit">Submit</button>
+=======
       <h2>Add New Transaction</h2>
       <form id="transactionForm" method="POST" action="config/add_transaction.php">
         <input type="text" name="payerName" placeholder="Payer Name" required>
@@ -103,14 +160,21 @@
           <option value="Verified">Verified</option>
         </select>
         <button type="submit">Submit</button>
+>>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
       </form>
     </div>
 
 
+<<<<<<< HEAD
+            <h1 class="Edit">Recent Transactions</h1>
+    <div id="editModal" class="modal">
+      <div class="modal-content">
+=======
     <!-- Edit Mode -->
     <div id="editModal" class="modal">
       <div class="modal-content">
         <h2>Edit Transaction</h2>
+>>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
         <div class="content">
           <form id="editTransactionForm">
             <label>Payer Name:</label>
@@ -147,7 +211,6 @@
 
     <!-- Transaction Records Table -->
     <div class="transaction-table">
-      <h2>Recent Transactions</h2>
       <table>
         <thead>
           <tr>

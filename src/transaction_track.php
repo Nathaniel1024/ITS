@@ -29,6 +29,11 @@
       <div class="item"><a href="dashboard.php"><i class="fas fa-desktop"></i>Dashboard</a></div>
       <div class="item active"><a href="transaction_track.php"><i class="fas fa-money-check"></i>Tracking</a></div>
       <div class="item"><a href="transaction.php"><i class="fas fa-money-check"></i>Transaction</a></div>
+<<<<<<< HEAD
+      <div class="item"><a href="download_page.php"><i class="fas fa-download"></i> Download Center</a></div>
+      <div class="item"><a href="online_billing.php"><i class="fas fa-money-bill"></i>Online Billing</a></div>
+=======
+>>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
       <div class="form-item">
         <form action="logout.php" method="POST">
           <button type="submit" class="logout-btn"><i class="fas fa-info-circle"></i>Logout</button>
@@ -37,9 +42,15 @@
     </div>
   </div>
 
+<<<<<<< HEAD
+  <section class="header">
+    <h1>Transaction Tracking Management</h1>
+  </section>
+=======
   <section class="main">
     <h1>Transaction Tracking Management</h1>
 
+>>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
     <?php
     require_once 'config/db.php'; // Include your database connection file
     session_start();
@@ -55,7 +66,11 @@
 
     <!-- Transaction Activity Table -->
     <div class="activity-table">
+<<<<<<< HEAD
+      <h1>Transaction Activity Table</h1>
+=======
       <h2>Transaction Activity Table</h2>
+>>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
       <table class="table">
         <thead>
           <tr>
@@ -80,7 +95,11 @@
 
     <!-- Tracking Details Table -->
     <div class="tracking-table">
+<<<<<<< HEAD
+      <h1>Tracking Details</h1>
+=======
       <h2>Tracking Details</h2>
+>>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
       <table class="table">
         <thead>
           <tr>

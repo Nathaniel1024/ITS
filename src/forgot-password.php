@@ -45,7 +45,7 @@ if (isset($_POST['email'])) {
         // http://example.com/reset-password.php?token=
         // If you are testing locally, you can use localhost
         // http://localhost/reset-password.php?token=
-        $resetLink = "http://localhost/me/ITS/src/reset-password.php?token=" . urlencode($token);
+        $resetLink = "http://localhost/ITS/src/reset-password.php?token=" . urlencode($token);
         $subject = "Password Reset Request";
         $message = "Click the following link to reset your password: <a href=\"$resetLink\">Reset Password</a>";
 

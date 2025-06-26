@@ -1,17 +1,10 @@
-<<<<<<< HEAD
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-=======
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
 
 *{
  margin: 0;
  padding: 0;
  box-sizing: border-box;
-<<<<<<< HEAD
-=======
  font-family: "Poppins", sans-serif;
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
 }
 
 body{
@@ -41,29 +34,16 @@ body{
 .side-bar.active{
  left: 0;
 }
-<<<<<<< HEAD
-/*
-h1{
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin: 0;
-=======
 h1{
 
   text-align: center;
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
   font-weight: 500;
   font-size: 25px;
   padding-bottom: 13px;
   font-family: sans-serif;
   letter-spacing: 2px;
 }
-<<<<<<< HEAD
-*/
-=======
 
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
 .side-bar .menu{
  width: 100%;
  margin-top: 30px;
@@ -113,8 +93,6 @@ h1{
  padding-left: 80px;
 }
 
-<<<<<<< HEAD
-=======
 /* Active for the revenue collection dropdown */
 .sub-item.active {
   background: #5e8bcf;
@@ -122,7 +100,6 @@ h1{
   transition: 0.3s ease;
 }
 
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
 .rotate{
  transform: rotate(90deg);
 }
@@ -139,43 +116,12 @@ h1{
 
 .menu-btn{
  position: fixed;
-<<<<<<< HEAD
- color: #183B4E;
- font-size: 45px;
- height: 200px;
- margin-left: 40px;
- margin-top: 56px;
- cursor: pointer;
-}
-
-.header{
- /* height: 100vh; */
- display: flex;
- justify-content: flex-start;
- align-items: flex-start;
- border-bottom: #DDA853 1px solid;
- box-shadow:  #DDA853 0px -5px 20px;
-}
-
-.header h1{
-  font-family: 'Gilda Display';
- color: #DDA853;
- font-size: 70px;
- font-weight: lighter;
- margin-left: 120px;
- margin-top: 40px;
- padding-bottom: 20px;
-}
-/*MAIN SECTION*/
-
-=======
  color: rgb(0, 0, 0);
  font-size: 35px;
  margin: 25px;
  cursor: pointer;
 }
 
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
 .main{
  /* height: 100vh; */
  display: flex;
@@ -271,34 +217,6 @@ canvas {
 .finance-summary {
     display: flex;
     gap: 20px;
-<<<<<<< HEAD
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 1300px;
-    max-width: 2000px;
-    margin: 50px auto 0 auto; /* <-- This centers it horizontally */
-}
-
-
-.card {
-    background: #F9F9F0;
-    padding: 20px;
-    border-radius: 14px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    color: rgb(0, 0, 0);
-    width: 300px;
-    margin-bottom: 40px;
-    width: 500px;
-
-    flex: 1 1 250px;
-    max-width: 500px; 
-    min-width: 200px; 
-    height: 250px;
-    row-gap: 30px;
-=======
     justify-content: center; /* Centers cards horizontally */
     align-items: center; /* Vertically center contents inside cards */
     flex-wrap: wrap; /* Allows wrapping on smaller screens */
@@ -319,108 +237,18 @@ canvas {
     max-width: 300px; /* Prevent cards from getting too wide */
     min-width: 200px; /* Prevent cards from shrinking too much */
     height: 150px;
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
 
     display: flex;
     flex-direction: column;
     justify-content: center; /* Vertically center content */
 }
 
-<<<<<<< HEAD
-.card h3 {
-    margin-bottom: 10px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    color: #27548A;
-    text-align: center;
-}
-
-.card p {
-  font-family: 'inter', sans-serif;
-    font-size: 58px;
-    color: #333;
-    margin: 0;
-}
-
-.add{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  margin-top: 80px;
- padding-bottom: 10px;
- font-weight: lighter;
-  font-size: 80px;
-  text-align: center;
- font-family: 'Gilda Display';
- color: black;
-}
-
-=======
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
 .transaction-form button {
     display: block;
     margin: 0 auto; /* Centers horizontally */
 }
 
 .transaction-form {
-<<<<<<< HEAD
-    width: 85%;
-    padding-left: 100px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    background:#F9F9F0;
-;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    display: flex;
-   flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
-    }
-
-
-.name{
-    width: 85%;
-    padding: 20px;
-}
-
-.etc-group {
-  margin-left: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-   width: 100%;
-}
-
-.etc-label {
-  margin-bottom: 8px; /* space between label and etc */
-  font-size: 16px;
-  color: #333;
-  text-align: center; /* Center the label text */
-}
-
-.etc {
-  display: flex;
-  flex-direction: row; /* keep row if you want children of .etc in a row */
-  align-items: center;
-  gap: 16px;
-  width: 100%;
-}
-
-.etc-group input[type="text"],
-.etc-group input[type="number"], .etc-group select {
-    width: 20%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-
-
-.name input[type="text"] {
-=======
     width: 50%;
     padding: 20px;
     background: white;
@@ -430,7 +258,6 @@ canvas {
 }
 
 .transaction-form input, .transaction-form select {
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -438,109 +265,9 @@ canvas {
     border-radius: 5px;
 }
 
-<<<<<<< HEAD
-.submit{
-  margin-top: 20px;
-  background-color: #219626;
-  color: white;
-  font-size: 16px;
-  padding: 15px;
-  width: 100px;
-  display: flex;
-  align-items: center;  
-  justify-content: center;
-}
-
-
-.transaction-form button {
-    display: block;
-    margin: 0 auto; /* Centers horizontally */
-}
-
-.transaction-form {
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-direction: column;
-  background-color: #F9F9F0;
-
-}
-
-.Edit{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  margin-top: 80px;
- padding-bottom: 10px;
- font-weight: lighter;
-  font-size: 80px;
-  text-align: center;
- font-family: 'Gilda Display';
- color: black;
-}
-
-.transaction-table input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    
-}
-
-.transaction-table {
-    width: 85%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    margin-left: 120px;
-  background: #F9F9F0;
-}
-
-.transaction-table table {
-    width: auto;
-    border-collapse: collapse;
-    margin: 0 auto;
-    max-width: 100%;
-}
-
-table th, table td {
-  border: 1px solid #ccc;
-  padding: 8px;
-}
-
-.transaction-table th {
-  background-color: #27548A;
-  color: #fff;
-}
-
-table td {
-background: #F9F9F0;
-
-}
-
-table tr:hover {
-    background-color: #f2f2f2;
-}
-
-table th:first-child {
-  border-top-left-radius: 14px;
-}
-table th:last-child {
-  border-top-right-radius: 14px;
-}
-table tr:last-child td:first-child {
-  border-bottom-left-radius: 14px;
-}
-table tr:last-child td:last-child {
-  border-bottom-right-radius: 14px;
-=======
 .transaction-table {
     width: 80%;
     overflow-x: auto;
->>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
 }
 
 @media screen and (max-width: 768px) {
@@ -622,14 +349,8 @@ button.edit-btn {
     margin-bottom: 10px;
 }
 
-/* Delete Button */
-button.delete-btn {
-    background: #E74C3C; /* Red */
-    color: white;
-}
-
-button.history-btn {
-    background: #00a4fc; /* Blue */
+button.print-btn {
+    background: #5bb6f3; 
     color: white;
 }
 
@@ -699,32 +420,4 @@ label, input {
   text-align: center;
 }
 
-.status-badge {
-  display: inline-block;
-  padding: 5px 12px;
-  border-radius: 15px;
-  color: white;
-  font-weight: 600;
-  font-size: 0.9em;
-  min-width: 90px;
-  text-align: center;
-  user-select: none;
-  cursor: default;
-  text-transform: capitalize;
-}
 
-/* Status colors */
-.status-badge.completed {
-  background-color: #28a745; /* green */
-}
-
-.status-badge.awaiting-approval {
-  background-color: #ffc107; /* yellow/orange */
-  color: #212529;
-}
-
-.status-badge.verified {
-  background-color: #007bff; /* blue */
-}
-
-/* Add more if you have other statuses */

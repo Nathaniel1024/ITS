@@ -37,6 +37,11 @@ if (!isset($_SESSION['user'])) {
       <div class="item active"><a href="dashboard.php"><i class="fas fa-desktop"></i> Dashboard</a></div>
       <div class="item"><a href="transaction_track.php"><i class="fas fa-folder"></i> Tracking</a></div>
       <div class="item"><a href="transaction.php"><i class="fas fa-money-check"></i> Transaction</a></div>
+<<<<<<< HEAD
+      <div class="item"><a href="online_billing.php"><i class="fas fa-money-bill"></i>Online Billing</a></div>
+      <div class="item"><a href="download_page.php"><i class="fas fa-download"></i> Download Center</a></div>
+=======
+>>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
       <div class="form-item">
         <form action="logout.php" method="POST">
           <button type="submit" class="logout-btn"><i class="fas fa-info-circle"></i> Logout</button>
@@ -46,6 +51,25 @@ if (!isset($_SESSION['user'])) {
   </aside>
 
   <main>
+<<<<<<< HEAD
+    <section class="header">
+      <h1>Treasury Dashboard</h1>
+    </section>
+
+   <h1 class="h1">Budget Overview</h1>
+  <div class="Overview">
+    <section class="chart">
+      <canvas id="myPieChart"></canvas>
+    </section>
+    <section class="chart">
+      <canvas id="budgetBarGraph"></canvas>
+    </section>
+</div>
+
+    <h1 class="report">Report</h1>
+    <div class="rpt">
+    <section class="main">
+=======
     <section class="main">
       <h1>Treasury Dashboard</h1>
     </section>
@@ -58,6 +82,7 @@ if (!isset($_SESSION['user'])) {
 
     <section class="main">
       <h1>Report</h1>
+>>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
     </section>
     <section class="main">
       <form method="GET" class="report-form">
@@ -168,7 +193,11 @@ if (!isset($_SESSION['user'])) {
 
       </div>
     </section>
+<<<<<<< HEAD
+</div>
+=======
 
+>>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
   </main>
 
   <script src="js/dashboard.js"></script>

@@ -19,7 +19,10 @@ function createPieChart(chartData, type) {
     data: {
       labels: chartData.map(row => row.sector),
       datasets: [{
+<<<<<<< HEAD
+=======
         label: 'Municipal Budget (₱)',
+>>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
         data: chartData.map(row => row.budget),
         backgroundColor: [
           '#4e73df', 
@@ -38,9 +41,22 @@ function createPieChart(chartData, type) {
       plugins: {
         title: {
           display: true,
+<<<<<<< HEAD
+          text: 'Budget Allocation',
+          font: {
+            family: 'Montserrat, sans-serif',
+            size: 30,
+            weight: 'lighter'
+          },
+          color: '#27548A' ,
+          padding: {
+            top: 20,
+            bottom: 20
+=======
           text: 'Municipal Budget (₱)',
           font: {
             size: isMobile ? 25 : 50
+>>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
           }
         },
         tooltip: {
@@ -196,7 +212,7 @@ new Chart(ctx3, {
   data: {
     labels: ['2022', '2023', '2024', '2025'],
     datasets: [{
-      label: 'Municipal Budget',
+      label: 'Annual Budget Comparison',
       data: [80000000, 90000000, 100000000, 110000000], // in PHP
       backgroundColor: [
         '#4e73df',
@@ -217,6 +233,22 @@ new Chart(ctx3, {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
+<<<<<<< HEAD
+        title: {
+          display: true,
+          text: 'Annual Budget Comparison',
+          font: {
+            family: 'Montserrat, sans-serif',
+            size: 30,
+            weight: 'lighter'
+          },
+          color: '#27548A' ,
+          padding: {
+            top: 20,
+            bottom: 20
+          }
+        },
+=======
       title: {
         display: true,
         text: '',
@@ -224,6 +256,7 @@ new Chart(ctx3, {
           size: 18
         }
       },
+>>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
       tooltip: {
         callbacks: {
           label: function(context) {

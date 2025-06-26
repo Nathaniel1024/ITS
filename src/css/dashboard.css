@@ -4,7 +4,6 @@
  margin: 0;
  padding: 0;
  box-sizing: border-box;
- font-family: "Poppins", sans-serif;
 }
 
 body{
@@ -34,16 +33,19 @@ body{
 .side-bar.active{
  left: 0;
 }
+/*
 h1{
-
-  text-align: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0;
   font-weight: 500;
   font-size: 25px;
   padding-bottom: 13px;
   font-family: sans-serif;
   letter-spacing: 2px;
 }
-
+*/
 .side-bar .menu{
  width: 100%;
  margin-top: 30px;
@@ -109,26 +111,115 @@ h1{
 
 .menu-btn{
  position: fixed;
- color: rgb(0, 0, 0);
- font-size: 35px;
- margin: 25px;
+ color: #183B4E;
+ font-size: 45px;
+ height: 200px;
+ margin-left: 40px;
+ margin-top: 56px;
  cursor: pointer;
 }
 
-.main{
+.header{
  /* height: 100vh; */
  display: flex;
- justify-content: center;
- align-items: center;
- padding: 50px;
+ justify-content: flex-start;
+ align-items: flex-start;
+ border-bottom: #DDA853 1px solid;
+ box-shadow:  #DDA853 0px -5px 20px;
 }
 
-.main h1{
- color: rgba(0, 0, 0, 0.8);
- font-size: 60px;
- text-align: center;
- line-height: 80px;
+.header h1{
+  font-family: 'Gilda Display';
+ color: #DDA853;
+ font-size: 70px;
+ font-weight: lighter;
+ margin-left: 120px;
+ margin-top: 40px;
+ padding-bottom: 20px;
 }
+
+.Overview {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    gap: 50px;
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
+
+}
+
+.h1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  margin-top: 80px;
+ padding-bottom: 10px;
+ font-weight: lighter;
+  font-size: 80px;
+  text-align: center;
+ font-family: 'Gilda Display';
+ color: black;
+
+}
+
+.chart{
+ margin-top: 30px;
+ padding: 20px;
+ border-radius: 50px;
+ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+ width: 100%;
+ background-color: #F9F9F0;
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+
+}
+
+.report{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  margin-top: 80px;
+ padding-bottom: 10px;
+ font-weight: lighter;
+  font-size: 80px;
+  text-align: center;
+ font-family: 'Gilda Display';
+ color: black;
+}
+
+.rpt{
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  width: 1480px;
+  padding: 20px;
+  background-color: #F9F9F0;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 60px;
+}
+
+.report-form {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 15px;
+  column-gap: 5px;
+  justify-content: center;
+  border-radius: 16px;
+  max-width: 1500px;
+  width: 1000px;
+  margin: 0;
+  padding: 0;
+}
+
+
+
 
 @media (max-width: 900px){
  .main h1{
@@ -158,7 +249,11 @@ canvas {
 }
 
 #budgetBarGraph {
+<<<<<<< HEAD
+  height: 700px;
+=======
   height: 500px;
+>>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
 }
 
 
@@ -222,6 +317,16 @@ canvas {
 .report-form {
   display: flex;
   flex-wrap: wrap;
+<<<<<<< HEAD
+  row-gap: 15px;
+  column-gap: 5px;
+  justify-content: center;
+  border-radius: 16px;
+  max-width: 1500px;
+  width: 1000px;
+  margin: 0;
+  padding: 0;
+=======
   justify-content: center;
   gap: 0.75rem;
   padding: 1.5rem;
@@ -230,6 +335,7 @@ canvas {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   max-width: 1000px;
   width: 100%;
+>>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
 }
 
 /* Input field styling */
@@ -325,6 +431,23 @@ table th, table td {
   border: 1px solid #ccc;
   padding: 8px;
   text-align: center;
+<<<<<<< HEAD
+  height: 80px;
+  color: #222;
+  background: #F9F9F0;
+}
+
+table th {
+    background-color: #27548A;
+    color: #fff;
+    height: 80px;
+}
+
+.table-container {
+  width: 1480px;
+  overflow-x: auto;
+  margin-top: 70px;
+=======
   color: #222;
   background: #fff;
 }
@@ -338,4 +461,5 @@ table th {
   width: 100%;
   overflow-x: auto;
   margin: 20px 0;
+>>>>>>> 535eb76e64e11aacb6af07b30cb7626d361e306c
 }
